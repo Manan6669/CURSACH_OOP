@@ -1,0 +1,24 @@
+﻿<Page x:Class="Kursovoi.UserPageAdmin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kursovoi"
+      mc:Ignorable="d" 
+      d:DesignHeight="423" d:DesignWidth="736"
+      Title="UserPageAdmin">
+
+    <Grid RenderTransformOrigin="0.705,0.638">
+
+
+        <Image Height="257" Width="240" Margin="248,62,248,104" Source="D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\BD\Kursovoi\Kursovoi\bin\Debug\net5.0-windows\PHOTOTITLE\админ.jpg"/>
+
+
+        <TextBlock  HorizontalAlignment="Center" Margin="0,316,0,0" Text="Admin" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" Height="42" Style="{DynamicResource TextBlockStyleTitles}"/>
+
+
+
+
+
+    </Grid>
+</Page>
