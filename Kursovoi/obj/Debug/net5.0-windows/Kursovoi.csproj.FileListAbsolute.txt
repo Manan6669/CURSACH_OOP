@@ -79,3 +79,14 @@ D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\Kursovoi\Kursovoi\o
 D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\Kursovoi\Kursovoi\obj\Debug\net5.0-windows\UserPageAdmin.baml
 D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\Kursovoi\Kursovoi\obj\Debug\net5.0-windows\WindowMain.baml
 D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\Kursovoi\Kursovoi\obj\Debug\net5.0-windows\WindowMainAdmin.baml
+D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\Kursovoi\Kursovoi\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\Kursovoi\Kursovoi\bin\Debug\net5.0-windows\itextsharp.dll
+D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\Kursovoi\Kursovoi\bin\Debug\net5.0-windows\PdfSharp.Charting.dll
+D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\Kursovoi\Kursovoi\bin\Debug\net5.0-windows\PdfSharp.dll
+D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\Kursovoi\Kursovoi\bin\Debug\net5.0-windows\de\PdfSharp.Charting.resources.dll
+D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\Kursovoi\Kursovoi\bin\Debug\net5.0-windows\de\PdfSharp.resources.dll
+D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\Kursovoi\Kursovoi\bin\Debug\net5.0-windows\Syncfusion.Compression.Base.dll
+D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\Kursovoi\Kursovoi\bin\Debug\net5.0-windows\Syncfusion.Licensing.dll
+D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\Kursovoi\Kursovoi\bin\Debug\net5.0-windows\Syncfusion.Pdf.Base.dll
+D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\Kursovoi\Kursovoi\bin\Debug\net5.0-windows\Syncfusion.PdfViewer.WPF.dll
+D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\Kursovoi\Kursovoi\bin\Debug\net5.0-windows\Syncfusion.Shared.WPF.dll

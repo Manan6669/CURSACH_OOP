@@ -5,20 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovoi"
         mc:Ignorable="d"
-      Title="ShabTitle" d:DesignHeight="680" d:DesignWidth="800">
-    
+      Title="ShabTitle" d:DesignHeight="680" d:DesignWidth="1000">
+
     <ScrollViewer VerticalScrollBarVisibility="Hidden">
-        <Grid Width="736" Height="680">
-           
+        <Grid Width="1000" Height="680">
+
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="260"/>
-                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="360"/>
+                <!-- <ColumnDefinition Width="40"/>-->
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
-            <Image Grid.Column="0" x:Name="ImgTit" HorizontalAlignment="Left" Height="283" Margin="7,44,0,0" VerticalAlignment="Top" Width="240"/>
+            <Image Grid.Column="0" Stretch="UniformToFill" x:Name="ImgTit" HorizontalAlignment="Left" Height="391" Margin="10,62,0,0" VerticalAlignment="Top" Width="332"/>
 
-            <Button x:Name="btnlink" Content="Читать в браузере" Height="37" Margin="0,40,0,0" Width="240" Click="LinkClick" Style="{StaticResource buttonStyle2}" Background="#FF252525" BorderBrush="#FFBD6CB6"/>
+            <Button x:Name="btnlink" Content="Читать в браузере" Height="37" Margin="60,467,60,176" Width="240" Click="LinkClick" Style="{StaticResource buttonStyle2}" Background="#FF252525" BorderBrush="#FFBD6CB6"/>
             <!-- <TextBlock x:Name="GoReadLink" Text="Начать читать" HorizontalAlignment="Center" Margin="0,350,0,0" VerticalAlignment="Top"  Style="{DynamicResource TextBlockImageStyle}" >
                 <Hyperlink x:Name="UriTit"   NavigateUri=""  Foreground="White" TextDecorations="{x:Null}" >
                     
@@ -26,12 +26,12 @@
 
             </TextBlock>-->
 
-            <Button x:Name="AddToBookMark" Click="AddToBookM_Click" Content="Добавить в закладки" HorizontalAlignment="Center" Margin="0,392,0,0" VerticalAlignment="Top" Width="240" Height="37" Style="{StaticResource buttonStyle2}"/>
-            <Button x:Name="ReadPdf" Click="ReadPdfTit" Content="Читать в приложении"  Height="37" Width="240" Margin="0 240 0 0" Style="{StaticResource buttonStyle2}" Background="#FF252525" BorderBrush="#FFBD6CB6"></Button>
+            <Button x:Name="AddToBookMark" Click="AddToBookM_Click" Content="Добавить в закладки" HorizontalAlignment="Center" Margin="0,517,0,0" VerticalAlignment="Top" Width="240" Height="37" Style="{StaticResource buttonStyle2}"/>
+            <Button x:Name="ReadPdf" Click="ReadPdfTit" Content="Читать в приложении"  Height="37" Width="240" Margin="60,567,60,76" Style="{StaticResource buttonStyle2}" Background="#FF252525" BorderBrush="#FFBD6CB6"></Button>
 
-            <TextBlock x:Name="NameTitle" Text="test"  Grid.Column="2" HorizontalAlignment="Left" Margin="10,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390"  Style="{StaticResource TextBlockStyle}"/>
-            <Rectangle Height="46"  Fill="#FF252525" VerticalAlignment="Top" Width="436" Grid.Column="2" Margin="0,108,0,0"/>
-            <StackPanel Orientation="Horizontal" Grid.Column="2" Height="47" Width="436" Margin="0,108,0,0" VerticalAlignment="Top" >
+            <TextBlock x:Name="NameTitle" Text="test"  Grid.Column="1" HorizontalAlignment="Left" Margin="50,53,0,0" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="544"  Style="{StaticResource TextBlockStyle}"/>
+            <Rectangle Height="46"  Fill="#FF252525" VerticalAlignment="Top" Grid.Column="2" Margin="34,116,34,0"/>
+            <StackPanel Orientation="Horizontal" Grid.Column="2" Height="47" Margin="40,116,79,0" VerticalAlignment="Top" >
                 <TextBlock Text="Тип:" Margin="10 0 0 0" Grid.Column="2"  TextWrapping="Wrap" VerticalAlignment="Center"  Style="{StaticResource TextBlockImageStyle2}"/>
                 <TextBlock Margin="2 0 0 0" VerticalAlignment="Center" Text="test" TextWrapping="Wrap" x:Name="type"  Style="{StaticResource TextBlockImageStyle2}"></TextBlock>
                 <TextBlock Text="Год:" Margin="10 0 0 0" Grid.Column="2"  TextWrapping="Wrap" VerticalAlignment="Center" Style="{StaticResource TextBlockImageStyle2}"/>
@@ -42,16 +42,16 @@
                 <TextBlock Margin="2 0 0 0" VerticalAlignment="Center" Text="test" TextWrapping="Wrap" x:Name="publ"  Style="{StaticResource TextBlockImageStyle2}" Width="132"></TextBlock>
             </StackPanel>
 
-            <Rectangle Grid.Column="2" HorizontalAlignment="Center" Height="469" Margin="0,176,0,0" Fill="#FF252525" VerticalAlignment="Top" Width="436"/>
-            <StackPanel Margin="10,195,10,0" Grid.Column="2" Height="62" VerticalAlignment="Top" Orientation="Horizontal">
-                <TextBlock Grid.Column="2" Margin="2 2 0 0" HorizontalAlignment="Center"  Text="Жанры:" TextWrapping="Wrap" VerticalAlignment="Top" Style="{StaticResource TextBlockImageStyle}"/>
-                <TextBlock Grid.Column="2" Margin="3 2 0 0" HorizontalAlignment="Center" Width="356"  x:Name="genre" TextWrapping="Wrap" VerticalAlignment="Top" Style="{StaticResource TextBlockImageStyle}"/>
+            <Rectangle Grid.Column="2" HorizontalAlignment="Center" Height="469" Margin="0,184,0,0" Fill="#FF252525" VerticalAlignment="Top" Width="572"/>
+            <StackPanel Margin="48,195,76,0" Grid.Column="2" Height="70" VerticalAlignment="Top" Orientation="Horizontal">
+                <TextBlock Grid.Column="2" Margin="2 2 0 0"  Text="Жанры:" TextWrapping="Wrap" VerticalAlignment="Top" Style="{StaticResource TextBlockImageStyle2}"/>
+                <TextBlock Grid.Column="2" Margin="3 2 0 0" HorizontalAlignment="Center" Width="356"  x:Name="genre" TextWrapping="Wrap" VerticalAlignment="Top" Style="{StaticResource TextBlockImageStyle2}"/>
             </StackPanel>
 
-            <TextBlock x:Name="destit" Grid.Column="2" HorizontalAlignment="Center" Margin="0,256,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="416"  Style="{StaticResource TextBlockImageStyle}"/>
+            <TextBlock x:Name="destit" Grid.Column="1" HorizontalAlignment="Left" Margin="50,276,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="544"  Style="{StaticResource TextBlockImageStyle2}"/>
 
-            <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="23,545,0,0" Text="Переводчик" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Style="{StaticResource TextBlockImageStyle}"/>
-            <TextBlock Grid.Column="2" Margin="23,575,10,56" x:Name="translator" Style="{StaticResource TextBlockStyle}"></TextBlock>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="49,565,0,0" Text="Переводчик" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Style="{StaticResource TextBlockImageStyle2}"/>
+            <TextBlock Grid.Column="1" Margin="49,595,289,56" x:Name="translator" Style="{StaticResource TextBlockStyle}"></TextBlock>
             <Button HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="20"  Height="28" Click="Back_Click"  Style="{StaticResource TriggerBut}">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="&#xE72B;" Style="{StaticResource buttonIcon}"/>
@@ -59,5 +59,5 @@
             </Button>
         </Grid>
     </ScrollViewer>
-    
+
 </Page>

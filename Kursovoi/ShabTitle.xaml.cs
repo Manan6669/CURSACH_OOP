@@ -158,12 +158,23 @@ namespace Kursovoi
 
         private void ReadPdfTit(object sender, RoutedEventArgs e)
         {
-            var code = Application.Current.Resources["TT"];
-            ReadPdf pd = new ReadPdf();
-            pd.Show();
-            var window = Application.Current.Windows[0];
-            if (window != null)
-                window.Close();
+            using (CURSOVOIContext db = new CURSOVOIContext())
+            {
+                var code = Application.Current.Resources["TT"];
+                string shortcode = code.ToString();
+                shortcode = shortcode.Remove(0, 5);
+
+
+                var sourc = db.Photochepter.FirstOrDefault(p => p.CodeTitle == int.Parse(shortcode));
+                if (sourc.PathPhChepter == null)
+                {
+                    MessageBox.Show("Глав комикса нет!");
+                }
+                else
+                {
+                    this.NavigationService.Navigate(new Uri("ReadPdf.xaml", UriKind.Relative));
+                }
+            }
         }
     }
 }

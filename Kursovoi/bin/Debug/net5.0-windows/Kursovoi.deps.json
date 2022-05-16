@@ -10,10 +10,33 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "3.1.24",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.24",
-          "Microsoft.EntityFrameworkCore.Tools": "3.1.24"
+          "Microsoft.EntityFrameworkCore.Tools": "3.1.24",
+          "PDFsharp": "1.50.5147",
+          "Syncfusion.Pdf.Wpf": "19.4.0.56",
+          "Syncfusion.PdfViewer.WPF": "19.4.0.38",
+          "iTextSharp": "5.5.13.3"
         },
         "runtime": {
           "Kursovoi.dll": {}
+        }
+      },
+      "BouncyCastle/1.8.9": {
+        "runtime": {
+          "lib/BouncyCastle.Crypto.dll": {
+            "assemblyVersion": "1.8.9.0",
+            "fileVersion": "1.8.20343.1"
+          }
+        }
+      },
+      "iTextSharp/5.5.13.3": {
+        "dependencies": {
+          "BouncyCastle": "1.8.9"
+        },
+        "runtime": {
+          "lib/itextsharp.dll": {
+            "assemblyVersion": "5.5.13.3",
+            "fileVersion": "5.5.13.3"
+          }
         }
       },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -374,6 +397,26 @@
           }
         }
       },
+      "PDFsharp/1.50.5147": {
+        "runtime": {
+          "lib/net20/PdfSharp.Charting.dll": {
+            "assemblyVersion": "1.50.5147.0",
+            "fileVersion": "1.50.5147.0"
+          },
+          "lib/net20/PdfSharp.dll": {
+            "assemblyVersion": "1.50.5147.0",
+            "fileVersion": "1.50.5147.0"
+          }
+        },
+        "resources": {
+          "lib/net20/de/PdfSharp.Charting.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net20/de/PdfSharp.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
       "runtime.native.System/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -411,6 +454,59 @@
             "rid": "win-x86",
             "assetType": "native",
             "fileVersion": "4.6.25512.1"
+          }
+        }
+      },
+      "Syncfusion.Compression.Base/19.4.0.56": {
+        "runtime": {
+          "lib/net5.0/Syncfusion.Compression.Base.dll": {
+            "assemblyVersion": "19.4500.0.56",
+            "fileVersion": "19.4500.0.56"
+          }
+        }
+      },
+      "Syncfusion.Licensing/19.4.0.56": {
+        "runtime": {
+          "lib/net5.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "19.4.0.56",
+            "fileVersion": "19.4.0.56"
+          }
+        }
+      },
+      "Syncfusion.Pdf.Wpf/19.4.0.56": {
+        "dependencies": {
+          "Syncfusion.Compression.Base": "19.4.0.56",
+          "Syncfusion.Licensing": "19.4.0.56"
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Pdf.Base.dll": {
+            "assemblyVersion": "19.4500.0.56",
+            "fileVersion": "19.4500.0.56"
+          }
+        }
+      },
+      "Syncfusion.PdfViewer.WPF/19.4.0.38": {
+        "dependencies": {
+          "Syncfusion.Compression.Base": "19.4.0.56",
+          "Syncfusion.Licensing": "19.4.0.56",
+          "Syncfusion.Pdf.Wpf": "19.4.0.56",
+          "Syncfusion.Shared.WPF": "19.4.0.38"
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.PdfViewer.WPF.dll": {
+            "assemblyVersion": "19.4500.0.38",
+            "fileVersion": "19.4500.0.38"
+          }
+        }
+      },
+      "Syncfusion.Shared.WPF/19.4.0.38": {
+        "dependencies": {
+          "Syncfusion.Licensing": "19.4.0.56"
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Shared.WPF.dll": {
+            "assemblyVersion": "19.4500.0.38",
+            "fileVersion": "19.4500.0.38"
           }
         }
       },
@@ -1000,6 +1096,20 @@
       "serviceable": false,
       "sha512": ""
     },
+    "BouncyCastle/1.8.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-axnBgvdD5n+FnEG6efk/tfKuMFru7R/EoISH9zjh319yb3HD24TEHSAbNN/lTRT2ulOGRxDgOsCjkuk08iwWPg==",
+      "path": "bouncycastle/1.8.9",
+      "hashPath": "bouncycastle.1.8.9.nupkg.sha512"
+    },
+    "iTextSharp/5.5.13.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vtnMhTEJdZFCkLqaQLjD8aqTBIVKHPrSFuSXnxbLEJlvE/j/l88fvG9wtsejXTmhtErMo0lA9T2LdfdfbwplYw==",
+      "path": "itextsharp/5.5.13.3",
+      "hashPath": "itextsharp.5.5.13.3.nupkg.sha512"
+    },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "type": "package",
       "serviceable": true,
@@ -1224,6 +1334,13 @@
       "path": "newtonsoft.json/10.0.1",
       "hashPath": "newtonsoft.json.10.0.1.nupkg.sha512"
     },
+    "PDFsharp/1.50.5147": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vr5KBIqcXu2hqZ43UTwPR+jqHgMrT5tsPtJvEF+mORKoBNMh3bRWgAwic0U1sT2IVb4PR5m0GyQxnmCz8jBHWg==",
+      "path": "pdfsharp/1.50.5147",
+      "hashPath": "pdfsharp.1.50.5147.nupkg.sha512"
+    },
     "runtime.native.System/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1258,6 +1375,41 @@
       "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "Syncfusion.Compression.Base/19.4.0.56": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-h3Mw/sxR0t2txpl8lnGnpdOMgeHou3Mep5ezxuFK8xlY8VaAgc/pH4AjhYAtucNMGuUT+hy48pVdByFZKeBntQ==",
+      "path": "syncfusion.compression.base/19.4.0.56",
+      "hashPath": "syncfusion.compression.base.19.4.0.56.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/19.4.0.56": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yVHeTDHo67ZQ6xr4YSOYu/smiDZ3cXYiqZ2K9RzJ9WaMYGs5LgI7hmSRPiYDbV6VBHiPPgogdzKKjmJ9VWfhfw==",
+      "path": "syncfusion.licensing/19.4.0.56",
+      "hashPath": "syncfusion.licensing.19.4.0.56.nupkg.sha512"
+    },
+    "Syncfusion.Pdf.Wpf/19.4.0.56": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Cuz6p/+UmTX7CO8orj8bFdKnBhol/3HKEfg7DvbD4CpscoxGdfVO5R19m07rsAKaUSENQqIEch+wKZoYF2tqXA==",
+      "path": "syncfusion.pdf.wpf/19.4.0.56",
+      "hashPath": "syncfusion.pdf.wpf.19.4.0.56.nupkg.sha512"
+    },
+    "Syncfusion.PdfViewer.WPF/19.4.0.38": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ej+RmaJUYonNU7X3G6gOtybIRAVH+zivO06qnuaqHdVkFfr8JJF0OyT1KHzlhiwASxc+675BetZ4jtOm7sByRw==",
+      "path": "syncfusion.pdfviewer.wpf/19.4.0.38",
+      "hashPath": "syncfusion.pdfviewer.wpf.19.4.0.38.nupkg.sha512"
+    },
+    "Syncfusion.Shared.WPF/19.4.0.38": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oO3XDGvGkCmdZ33zEDlo+VbPSkgf/kproA13StwawQr+TyKO9lm+rTLPIUcqT2NLp6y+flJLshwS2nl5ThrUaw==",
+      "path": "syncfusion.shared.wpf/19.4.0.38",
+      "hashPath": "syncfusion.shared.wpf.19.4.0.38.nupkg.sha512"
     },
     "System.Collections/4.3.0": {
       "type": "package",

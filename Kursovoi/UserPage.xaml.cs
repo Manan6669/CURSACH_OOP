@@ -58,9 +58,9 @@ namespace Kursovoi
                     {
                         Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(imgtitcodepath)) },
                         Name = "Title" + (book.CodeTitle == st),
-                        Height = 134,
-                        Width = 100,
-                        Margin = new Thickness(5, 5, 0, 0)
+                        Height = 164,
+                        Width = 120,
+                        Margin = new Thickness(15, 0, 0, 5)
 
                     };
 
@@ -75,6 +75,7 @@ namespace Kursovoi
                 }
                 else
                 {
+                    
                     Binding binding = new Binding();
                     binding.Source = sourc.PhotoUsers;
                     UserImg.SetBinding(Image.SourceProperty, binding);
@@ -93,20 +94,28 @@ namespace Kursovoi
             dlg.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
             if (dlg.ShowDialog() == true)
             {
-                using (FileStream fileStream = new FileStream(dlg.FileName, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite))
+                try
                 {
-                    _filepathUser = dlg.FileName; fileStream.Close();
+                    using (FileStream fileStream = new FileStream(dlg.FileName, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite))
+                    {
+                        _filepathUser = dlg.FileName; fileStream.Close();
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Вы выбрали картинку которая уже существует!");
+                };
                 var file = System.IO.Path.GetFileName(_filepathUser);
+                
                 using (CURSOVOIContext db = new CURSOVOIContext())
                 {
                     var sourc = db.Users.Where(s => s.UsersLoqin == LoqUs.ToString() && s.UsersPassword == PasUs.ToString()).ToList();
                     foreach (Users ugn in sourc)
                     { 
                         var uss = ugn.PhotoUsers;
-                        var titred = db.Users.FirstOrDefault(u => u.PhotoUsers == uss);
+                       // var titred = db.Users.FirstOrDefault(u => u.PhotoUsers == uss);
                         var usphoto = db.Users.FirstOrDefault(u => u.PhotoUsers == file);
-                        if (usphoto != null)
+                        if (usphoto != null && _filepathUser == usphoto.PhotoUsers)
                         {
                             MessageBox.Show("Данное фото уже существует!");
                         }

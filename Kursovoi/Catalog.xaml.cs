@@ -42,9 +42,9 @@ namespace Kursovoi
                         Background = new ImageBrush
                         { ImageSource = new BitmapImage(new Uri(path)) },
                         Name = "Title" + u.CodeTitle,
-                        Height = 134,
-                        Width = 100,
-                        Margin = new Thickness(30, 20, 0, 0)
+                        Height = 164,
+                        Width = 120,
+                        Margin = new Thickness(30, 20, 0, 5)
                     };
                     btn.Click += Image_MouseLeftButtonDown;
                     TitleCatalog.Children.Add(btn);

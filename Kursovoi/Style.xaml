@@ -114,7 +114,7 @@
         </Style.Triggers>
     </Style>
     <Style TargetType="TextBlock" x:Key="TextBlockImageStyle2">
-        <Setter Property="FontSize" Value="12"></Setter>
+        <Setter Property="FontSize" Value="15"></Setter>
         <Setter Property="FontFamily" Value="Segoe UI"></Setter>
         <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
         <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
