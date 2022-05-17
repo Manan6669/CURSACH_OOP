@@ -74,10 +74,7 @@ namespace Kursovoi
              }   
 
         }
-        private void AdminC (object sender, EventArgs e)
-        {
-
-        }
+      
         private void EnterToProgrammWithRegistr(object sender, RoutedEventArgs e)
         {
             using (CURSOVOIContext db = new CURSOVOIContext())
@@ -85,27 +82,38 @@ namespace Kursovoi
                 string loqin = User.Text;
                 string password = Password.Password;
                 int id = db.Users.Max(m => m.UnicCodeUsers);
-                try
+                if(loqin == "" || password =="")
                 {
-                    Users newus = new Users
-                    {
-                        UsersLoqin = loqin,
-                        UsersPassword = password,
-                        UnicCodeUsers = id + 1
-                    };
-                    db.Users.Add(newus);
-                    db.SaveChanges();
-                    Users user = db.Users.FirstOrDefault((u) => u.UsersLoqin == loqin);
-                    MessageBox.Show("Войдите, пожалуйста, снова!", $"Добро пожаловать, {user.UsersLoqin}!");
-                    LogIn log = new LogIn();
-                    log.Show();
-                    var window = Application.Current.Windows[0];
-                    if (window != null)
-                        window.Close();
+                    MessageBox.Show("Вы не заполнили все поля!");
                 }
-                catch
-                {
+                else { 
+                    try
+                    {
+                        Users newus = new Users
+                        {
+                            UsersLoqin = loqin,
+                            UsersPassword = password,
+                            UnicCodeUsers = id + 1
+                         };
+                        db.Users.Add(newus);
+                        db.SaveChanges();
+                        Users user = db.Users.FirstOrDefault((u) => u.UsersLoqin == loqin);
+                        WindowMain winm = new WindowMain();
+                        winm.Show();
+                        var window = Application.Current.Windows[0];
+                        if (window != null)
+                            window.Close();
+                        /* MessageBox.Show("Войдите, пожалуйста, снова!", $"Добро пожаловать, {user.UsersLoqin}!");
+                         LogIn log = new LogIn();
+                         log.Show();
+                         var window = Application.Current.Windows[0];
+                         if (window != null)
+                              window.Close();*/
+                    }
+                     catch
+                    {
                     MessageBox.Show("Ошибка!", $"Неверный логин или пароль!");
+                    }
                 }
             }
         }

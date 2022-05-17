@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using Microsoft.EntityFrameworkCore;
 
 namespace Kursovoi
 {
@@ -117,22 +118,29 @@ namespace Kursovoi
         {
             using (CURSOVOIContext db = new CURSOVOIContext())
             {
+                int k = 0;
                 var LoqUs = Application.Current.Resources["EntUser"];
                 var PasUs = Application.Current.Resources["EntPassw"];
                 var CodUs = Application.Current.Resources["CodeUser"];
                 var code = Application.Current.Resources["TT"];
+                string codd = CodUs.ToString();
                 int CodeBook = db.Bookmarks.Max(b => b.CodeBookmarks);
                 string shortcode = code.ToString();
                 shortcode = shortcode.Remove(0, 5);
-
-                var sourc = db.Title.FirstOrDefault(p => p.CodeTitle == int.Parse(shortcode));
-                int sc = sourc.CodeTitle;
-
-                string NameTitUs = NameTitle.Text.Trim();
-                if (sc == int.Parse(shortcode))
+                var sas = db.Bookmarks.Where(p => p.UnicCodeUsers == int.Parse(codd)).ToList();
+                if (sas != null)
                 {
-                    try
+                    foreach(var item in sas)
                     {
+                        if(item.CodeTitle == int.Parse(shortcode))
+                        {
+                            k++;
+                        }
+                    }
+
+                    if (k == 0)
+                    {
+
                         Bookmarks book = new Bookmarks
                         {
                             CodeBookmarks = CodeBook + 1,
@@ -143,16 +151,68 @@ namespace Kursovoi
                         db.Bookmarks.Add(book);
                         db.SaveChanges();
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show("Error");
+                        MessageBox.Show("Тако тайтл у е");
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Такой комикс уже есть в закладках!");
+
+
                 }
 
+
+
+
+
+
+/*
+                var sourc = db.Title.Select(p => p.CodeTitle == int.Parse(shortcode));
+                var authus = db.Users.Where(b => b.UsersLoqin == LoqUs.ToString() && b.UsersPassword == PasUs.ToString()).FirstOrDefault();
+                var aucode = authus.UnicCodeUsers;
+                //  var sbk = db.Bookmarks.Select(s=>s.CodeTitle);
+                var sbk = db.Bookmarks.FirstOrDefault(s=>s.CodeTitle == int.Parse(shortcode));
+                var cldf = db.Bookmarks.Where(p => EF.Functions.Like(p.CodeTitle.ToString(), $"%{shortcode}%")).ToList();
+                var c = cldf.Count;
+                // var b = sbk.CodeTitle;
+                //int b = sbk.Count();
+                // int sc = sourc.CodeTitle;
+                var sourcBook = db.Bookmarks.Where(b => b.UnicCodeUsers == aucode).ToList();
+                   if ( sourcBook != null)
+                   {
+                    foreach (Bookmarks b in sourcBook)
+                    {
+                        string NameTitUs = NameTitle.Text.Trim();
+
+                        try
+                        {
+                            Bookmarks book = new Bookmarks
+                            {
+                                CodeBookmarks = CodeBook + 1,
+                                UnicCodeUsers = (int)CodUs,
+                                CodeTitle = int.Parse(shortcode),
+
+                            };
+                            db.Bookmarks.Add(book);
+                            db.SaveChanges();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error");
+                        }
+                    }
+                   }
+                   else
+                   {
+                       MessageBox.Show("Такой комикс уже есть в закладках!");
+                   }
+                 
+           /*     if (sourcBook != null)
+                {
+                    foreach (var s in sourcBook)
+                    {
+
+                    }
+                }
+           */
             }
         }
 

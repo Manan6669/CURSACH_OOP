@@ -57,13 +57,15 @@ namespace Kursovoi
                     var btnbook = new Button
                     {
                         Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(imgtitcodepath)) },
-                        Name = "Title" + (book.CodeTitle == st),
+                        Name = "Title" + st //== st
+                        ,
                         Height = 164,
                         Width = 120,
                         Margin = new Thickness(15, 0, 0, 5)
 
                     };
-
+                    btnbook.Click += GoBookmark;
+                    btnbook.MouseDoubleClick += DeleteBookmark;
                     BookmarkCatalog.Children.Add(btnbook);
 
                 }
@@ -84,6 +86,39 @@ namespace Kursovoi
 
             }
         }
+
+        public void DeleteBookmark(object sender, MouseEventArgs e)
+        {
+            var buttonNameBookmarkDel = (sender as Button).Name;
+            string shortcodeBook = buttonNameBookmarkDel.ToString();
+            shortcodeBook = shortcodeBook.Remove(0, 5);
+
+            using (CURSOVOIContext db = new CURSOVOIContext())
+            {
+                try
+                {
+                    var sourcbook = db.Bookmarks.FirstOrDefault(s => s.CodeTitle == int.Parse(shortcodeBook));
+                    var sb = sourcbook.CodeTitle;
+                    db.Bookmarks.Remove(sourcbook);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Слишком много нажатий на кнопку!");
+                }
+            }
+        }
+
+
+        public void GoBookmark(object sender, RoutedEventArgs e)
+        {
+
+            this.NavigationService.Navigate(new Uri("ShabTitle.xaml", UriKind.Relative));
+            var buttonNameBookmark = (sender as Button).Name;
+            Application.Current.Resources["TT"] = buttonNameBookmark;
+        }
+
+
         private string _filepathUser;
         string filedb;
         private void AddPhotoUser_Click(object sender, RoutedEventArgs e)

@@ -5,16 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Kursovoi"
       mc:Ignorable="d" 
-      d:DesignHeight="423" d:DesignWidth="736"
+      d:DesignHeight="600" d:DesignWidth="1364"
       Title="UserPageAdmin">
 
     <Grid RenderTransformOrigin="0.705,0.638">
 
 
-        <Image Height="257" Width="240" Margin="248,62,248,104" Source="D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\BD\Kursovoi\Kursovoi\bin\Debug\net5.0-windows\PHOTOTITLE\админ.jpg"/>
+        <Image Margin="544,132,517,144" Source="D:\ЛЕНННННА\4 семестр\КУРСОВОЙ ООП\BD\Kursovoi\Kursovoi\bin\Debug\net5.0-windows\PHOTOTITLE\админ.jpg"/>
 
 
-        <TextBlock  HorizontalAlignment="Center" Margin="0,316,0,0" Text="Admin" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" Height="42" Style="{DynamicResource TextBlockStyleTitles}"/>
+        <TextBlock  HorizontalAlignment="Left" Margin="643,460,0,0" Text="Admin" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" Height="42" Style="{DynamicResource TextBlockStyleTitles}"/>
 
 
 

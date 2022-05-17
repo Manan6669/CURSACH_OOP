@@ -42,8 +42,8 @@ namespace Kursovoi
                         Background = new ImageBrush
                         { ImageSource = new BitmapImage(new Uri(path)) },
                         Name = "Title" + u.CodeTitle,
-                        Height = 134,
-                        Width = 100,
+                        Height = 164,
+                        Width = 120,
                         Margin = new Thickness(30, 20, 0, 0)
                     };
                     btn.Click += Image_MouseLeftButtonDown;
@@ -121,8 +121,8 @@ namespace Kursovoi
                         Background = new ImageBrush
                         { ImageSource = new BitmapImage(new Uri(path)) },
                         Name = "Title" + u.CodeTitle,
-                        Height = 134,
-                        Width = 100,
+                        Height = 164,
+                        Width = 120,
                         Margin = new Thickness(30, 20, 0, 0)
                     };
 
@@ -156,8 +156,8 @@ namespace Kursovoi
                     {
                         Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(path)) },
                         Name = "Title" + u.CodeTitle,
-                        Height = 134,
-                        Width = 100,
+                        Height = 164,
+                        Width = 120,
                         Margin = new Thickness(30, 20, 0, 0)
                     };
                     TitleCatalog.Children.Add(btn);
@@ -182,8 +182,8 @@ namespace Kursovoi
                         Background = new ImageBrush
                         { ImageSource = new BitmapImage(new Uri(path)) },
                         Name = "Title" + u.CodeTitle,
-                        Height = 134,
-                        Width = 100,
+                        Height = 164,
+                        Width = 120,
                         Margin = new Thickness(30, 20, 0, 0)
                     };
                     btn.Click += Image_MouseLeftButtonDown;

@@ -88,8 +88,8 @@ namespace Kursovoi
                         Background = new ImageBrush
                         { ImageSource = new BitmapImage(new Uri(path)) },
                         Name = "Title" + u.CodeTitle,
-                        Height = 134,
-                        Width = 100,
+                        Height = 164,
+                        Width = 120,
                         Margin = new Thickness(30, 20, 0, 0)
                     };
 
@@ -127,58 +127,7 @@ namespace Kursovoi
 
             }
         }
-        /* private void GoFilterTRANS(object sender, RoutedEventArgs e)
-         {
-         }*/
-       /* private void GoFilterTYPE(object sender, RoutedEventArgs e)
-         {
-
-            MCSType.AddHandler(RadioButton.CheckedEvent, new RoutedEventHandler(RadioButton_Click2));
-           
-            TitleCatalog.Children.Clear();
-            using (CURSOVOIContext db = new CURSOVOIContext())
-            {
-                 
-                string shortcode = codetype.ToString();
-                 
-                 shortcode = shortcode.Remove(0, 5);
-
-
-                 var ty = db.Title.FirstOrDefault(t => t.CodeCodeTypeOfComics == shortcodeint);
-                 int typecom2 = ty.CodeCodeTypeOfComics;
-                 var typ = db.TypeOfComics.FirstOrDefault(t => t.CodeTypeOfComics == typecom2);
-                 string toc = typ.TypeOfComics1;
-               
-                
-                        var codetype = Application.Current.Resources["RAD2"];
-                        string shortcode = codetype.ToString();
-                        var ugh = db.TypeOfComics.FirstOrDefault(u => u.TypeOfComics1 == shortcode);
-                        string ugh2 = ugh.TypeOfComics1;
-               
-                var cucoldfiltr = db.Title.Where(p => EF.Functions.Like(ugh.CodeTypeOfComics.ToString(), $"%{Application.Current.Resources["RAD2"]}%")).ToList();
-                n = cucoldfiltr.Count;
-                Button[] btns = new Button[n];
-                foreach (Title u in cucoldfiltr)
-
-                {
-                    string path = Environment.CurrentDirectory + "/PHOTOTITLE/" + $"{u.Photo}";
-                    var btn = new Button
-                    {
-                        Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(path)) },
-                        Name = "Title" + u.CodeTitle,
-                        Height = 134,
-                        Width = 100,
-                        Margin = new Thickness(30, 20, 0, 0)
-                    };
-                    TitleCatalog.Children.Add(btn);
-                    btn.Click += Image_MouseLeftButtonDown; }
-                
-            }
-        }*/
-        /*
-         private void GoFilterYEAR(object sender, RoutedEventArgs e)
-         {
-         }*/
+      
         private void GoFilterGENRE(object sender, RoutedEventArgs e)
         {
 
@@ -201,8 +150,8 @@ namespace Kursovoi
                     {
                         Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(path)) },
                         Name = "Title" + u.CodeTitle,
-                        Height = 134,
-                        Width = 100,
+                        Height = 164,
+                        Width = 120,
                         Margin = new Thickness(30, 20, 0, 0)
                     };
                     TitleCatalog.Children.Add(btn);
@@ -227,8 +176,8 @@ namespace Kursovoi
                         Background = new ImageBrush
                         { ImageSource = new BitmapImage(new Uri(path)) },
                         Name = "Title" + u.CodeTitle,
-                        Height = 134,
-                        Width = 100,
+                        Height = 164,
+                        Width = 120,
                         Margin = new Thickness(30, 20, 0, 0)
                     };
                     btn.Click += Image_MouseLeftButtonDown;
