@@ -6,35 +6,39 @@
       xmlns:local="clr-namespace:Kursovoi"
       mc:Ignorable="d" 
       
-      Title="CatalogAdmin" d:DesignHeight="1220">
+      Title="CatalogAdmin" d:DesignHeight="1290">
     <ScrollViewer VerticalScrollBarVisibility="Hidden">
-        <Grid Width="1115" Height="1220">
+        <Grid Width="1115" Height="1290">
             <Grid.RowDefinitions>
-                <RowDefinition Height="1220"/>
+                <RowDefinition Height="1290"/>
             </Grid.RowDefinitions>
-            <Grid Margin="0,0,0,0">
+            <Grid Height="1290" VerticalAlignment="Top">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="720"/>
                     <ColumnDefinition Width="40"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Rectangle HorizontalAlignment="Center" Height="1050" VerticalAlignment="Top" Width="720" Fill="#FF252525"/>
+                <Rectangle HorizontalAlignment="Center" Height="1050" VerticalAlignment="Top" Width="720" Fill="#FF252525" Margin="0,0,0,170"/>
 
-                <StackPanel Orientation="Horizontal" Margin="160 20 0 0">
+                <StackPanel Orientation="Horizontal" Margin="160,30,0,0" Height="1200" VerticalAlignment="Top">
                     <TextBox x:Name="nameFiltr" Height="30" Style="{StaticResource SearchTextBox}" TextWrapping="Wrap" Text="" VerticalAlignment="Top" BorderBrush="White" Width="350"/>
                     <Button Height="30" Width="40" Background="#FF060606" BorderBrush="#FFBD6CB6" Click="SearchCom" VerticalAlignment="Top" >
                         <TextBlock Margin="2 0 0 0" Text="&#xE71E;" Style="{DynamicResource buttonIcon}"></TextBlock>
                     </Button>
                 </StackPanel>
-                <ScrollViewer Margin="0,60,0,0" VerticalScrollBarVisibility="Hidden">
+                <ScrollViewer VerticalScrollBarVisibility="Hidden" Height="1160" VerticalAlignment="Top" Margin="0,60,0,0">
                     <WrapPanel Width ="720" x:Name="TitleCatalog" HorizontalAlignment="Center" Margin="45,10,57,0" />
                 </ScrollViewer>
-                <Grid Grid.Column="2">
-                    <Rectangle HorizontalAlignment="Center" Height="1240" VerticalAlignment="Center" Width="276" Fill="#FF252525"/>
-                    <Label Content="Жанры" Grid.Column="2" HorizontalAlignment="Left" Margin="60,20,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}"/>
-                    <Button Content="Сбросить" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top"  Height="21"  Margin="0 25 42 0" Width="94" Style="{StaticResource Filtr}" Click="GOFilterSKIP"/>
-                    <Rectangle HorizontalAlignment="Center" Height="525" Margin="0,49,0,0" VerticalAlignment="Top" Width="232" Fill="#FFBD6CB6"/>
-                    <StackPanel Margin="75 55 0 0" x:Name="MCSGen" RadioButton.Checked="RadioButton_Click" >
+                <Grid Grid.Column="2" Height="1290" VerticalAlignment="Top">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="37*"/>
+                        <RowDefinition Height="1183*"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle HorizontalAlignment="Center" Height="1300" VerticalAlignment="Top" Width="276" Fill="#FF252525" Margin="0,-10,0,0" Grid.RowSpan="2"/>
+                    <Label Content="Жанры" HorizontalAlignment="Left" Margin="60,20,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle}" Grid.RowSpan="2"/>
+                    <Button Content="Сбросить" HorizontalAlignment="Right" VerticalAlignment="Top"  Height="21"  Margin="0 25 42 0" Width="94" Style="{StaticResource Filtr}" Click="GOFilterSKIP" Grid.RowSpan="2"/>
+                    <Rectangle HorizontalAlignment="Center" Height="525" Margin="0,12,0,0" VerticalAlignment="Top" Width="232" Fill="#FFBD6CB6" Grid.Row="1"/>
+                    <StackPanel Margin="75,18,0,0" x:Name="MCSGen" RadioButton.Checked="RadioButton_Click" Grid.Row="1" >
                         <RadioButton x:Name="Apocalipsis" GroupName="MCSGen" Content="Апокалипсис"  Margin="0 0 0 0" Style="{DynamicResource radio}"></RadioButton>
                         <RadioButton x:Name="Boevic" GroupName="MCSGen" Content="Боевик"  Margin="0 5 0 0" Style="{DynamicResource radio}"></RadioButton>
                         <RadioButton x:Name="Boevieiskusstva" GroupName="MCSGen" Content="Боевые искусства" Margin="0 5 0 0" Style="{DynamicResource radio}"></RadioButton>
@@ -65,18 +69,18 @@
 
 
 
-                    <Rectangle HorizontalAlignment="Center" Height="602" Margin="0,598,0,0" VerticalAlignment="Top" Width="232" Fill="#FFBD6CB6"/>
+                    <Rectangle HorizontalAlignment="Center" Margin="0,569,0,0" Width="232" Fill="#FFBD6CB6" Grid.Row="1" Height="663" VerticalAlignment="Top"/>
 
-                    <TextBlock HorizontalAlignment="Center" Margin="0,613,0,0" TextWrapping="Wrap" Text="Добавить комикс" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle}"/>
+                    <TextBlock HorizontalAlignment="Center" Margin="0,584,0,0" TextWrapping="Wrap" Text="Добавить комикс" VerticalAlignment="Top" Style="{DynamicResource TextBlockStyle}" Grid.Row="1"/>
 
-                    <TextBlock HorizontalAlignment="Left" Margin="74,660,0,0" TextWrapping="Wrap" Text="Название:" VerticalAlignment="Top" Style="{DynamicResource TextBlockImageStyle3}"/>
-                    <TextBox x:Name="NameT" HorizontalAlignment="Left" Margin="162,660,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="113" Height="21"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="74,0,0,613" TextWrapping="Wrap" Text="Название:" VerticalAlignment="Bottom" Style="{DynamicResource TextBlockImageStyle3}" Grid.Row="1"/>
+                    <TextBox x:Name="NameT" HorizontalAlignment="Left" Margin="162,0,0,609" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="113" Height="21" Grid.Row="1"/>
 
-                    <TextBlock HorizontalAlignment="Left" Margin="74,690,0,0" TextWrapping="Wrap" Text="Дата выпуска:" VerticalAlignment="Top"  Style="{DynamicResource TextBlockImageStyle3}"/>
-                    <DatePicker x:Name="DateT" HorizontalAlignment="Left" Margin="162,690,0,0" VerticalAlignment="Top" Width="113"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="74,0,0,583" TextWrapping="Wrap" Text="Дата выпуска:" VerticalAlignment="Bottom"  Style="{DynamicResource TextBlockImageStyle3}" Grid.Row="1"/>
+                    <DatePicker x:Name="DateT" HorizontalAlignment="Left" Margin="162,0,0,576" VerticalAlignment="Bottom" Width="113" Grid.Row="1"/>
 
-                    <TextBlock HorizontalAlignment="Left" Margin="74,720,0,0" TextWrapping="Wrap" Text="Тип комикса:" VerticalAlignment="Top" Style="{DynamicResource TextBlockImageStyle3}"/>
-                    <StackPanel x:Name="TypeT" Orientation="Vertical" Margin="162,722,93,425" Width="100" RadioButton.Checked="RadioButton_ClickType">
+                    <TextBlock HorizontalAlignment="Left" Margin="74,0,0,549" TextWrapping="Wrap" Text="Тип комикса:" VerticalAlignment="Bottom" Style="{DynamicResource TextBlockImageStyle3}" Grid.Row="1"/>
+                    <StackPanel x:Name="TypeT" Orientation="Vertical" Margin="162,0,93,491" Width="100" RadioButton.Checked="RadioButton_ClickType" Grid.Row="1" Height="73" VerticalAlignment="Bottom">
                         <RadioButton Name="Manga" Tag="1" Content="Манга" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Style="{DynamicResource radio}"/>
                         <RadioButton Name="Manhva" Tag="2" Content="Манхва" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Style="{DynamicResource radio}"/>
                         <RadioButton Name="Rumanga" Tag="3" Content="Руманга" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Style="{DynamicResource radio}"/>
@@ -85,38 +89,42 @@
 
 
 
-                    <TextBlock HorizontalAlignment="Left" Margin="74,800,0,0" TextWrapping="Wrap" Text="Издательство:" VerticalAlignment="Top" Style="{DynamicResource TextBlockImageStyle3}"/>
-                    <TextBox x:Name="PubT" HorizontalAlignment="Left" Margin="162,800,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="113" Height="21"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="74,0,0,463" TextWrapping="Wrap" Text="Издательство:" VerticalAlignment="Bottom" Style="{DynamicResource TextBlockImageStyle3}" Grid.Row="1"/>
+                    <TextBox x:Name="PubT" HorizontalAlignment="Left" Margin="162,0,0,459" TextWrapping="Wrap"  VerticalAlignment="Bottom" Width="113" Height="21" Grid.Row="1"/>
 
 
-                    <TextBlock HorizontalAlignment="Left" Margin="74,830,0,0" TextWrapping="Wrap" Text="Автор:" VerticalAlignment="Top" Style="{DynamicResource TextBlockImageStyle3}"/>
-                    <TextBox x:Name="AuT" HorizontalAlignment="Left" Margin="162,830,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="113" Height="21"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="74,0,0,431" TextWrapping="Wrap" Text="Автор:" VerticalAlignment="Bottom" Style="{DynamicResource TextBlockImageStyle3}" Grid.Row="1"/>
+                    <TextBox x:Name="AuT" HorizontalAlignment="Left" Margin="162,0,0,427" TextWrapping="Wrap"  VerticalAlignment="Bottom" Width="113" Height="21" Grid.Row="1"/>
 
-                    <TextBlock HorizontalAlignment="Left" Margin="74,860,0,0" TextWrapping="Wrap" Text="Жанры:" VerticalAlignment="Top" Style="{DynamicResource TextBlockImageStyle3}"/>
-                    <TextBox x:Name="GenT" HorizontalAlignment="Left" Margin="162,860,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="113" Height="21"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="74,0,0,395" TextWrapping="Wrap" Text="Жанры:" VerticalAlignment="Bottom" Style="{DynamicResource TextBlockImageStyle3}" Grid.Row="1"/>
+                    <TextBox x:Name="GenT" HorizontalAlignment="Left" Margin="162,0,0,391" TextWrapping="Wrap"  VerticalAlignment="Bottom" Width="113" Height="21" Grid.Row="1"/>
 
-                    <TextBlock HorizontalAlignment="Left" Margin="74,890,0,0" TextWrapping="Wrap" Text="Переводчик:" VerticalAlignment="Top" Style="{DynamicResource TextBlockImageStyle3}"/>
-                    <TextBox x:Name="TranT" HorizontalAlignment="Left" Margin="162,890,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="113" Height="21"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="74,0,0,356" TextWrapping="Wrap" Text="Переводчик:" VerticalAlignment="Bottom" Style="{DynamicResource TextBlockImageStyle3}" Grid.Row="1"/>
+                    <TextBox x:Name="TranT" HorizontalAlignment="Left" Margin="162,0,0,352" TextWrapping="Wrap"  VerticalAlignment="Bottom" Width="113" Height="21" Grid.Row="1"/>
 
-                    <TextBlock HorizontalAlignment="Left" Margin="74,920,0,0" TextWrapping="Wrap" Text="Статус перевода:" VerticalAlignment="Top" Width="87" Style="{DynamicResource TextBlockImageStyle3}"/>
-                    <StackPanel x:Name="StatT" Orientation="Vertical" Margin="162,922,93,229" Width="100" RadioButton.Checked="RadioButton_ClickStat">
+                    <TextBlock HorizontalAlignment="Left" Margin="74,0,0,305" TextWrapping="Wrap" Text="Статус перевода:" VerticalAlignment="Bottom" Width="87" Style="{DynamicResource TextBlockImageStyle3}" Grid.Row="1"/>
+                    <StackPanel x:Name="StatT" Orientation="Vertical" Margin="162,0,93,269" Width="100" RadioButton.Checked="RadioButton_ClickStat" Grid.Row="1" Height="69" VerticalAlignment="Bottom">
                         <RadioButton x:Name="Prod" Tag="1" Content="Продолжается" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Style="{DynamicResource radio}"/>
                         <RadioButton x:Name="Zam" Tag="2" Content="Заморожен" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Style="{DynamicResource radio}"/>
                         <RadioButton x:Name="Zav" Tag="3" Content="Завершен" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Style="{DynamicResource radio}"/>
                         <RadioButton x:Name="Zab" Tag="4" Content="Заброшен" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Style="{DynamicResource radio}"/>
                     </StackPanel>
 
-                    <TextBlock HorizontalAlignment="Left" Margin="74,997,0,0" TextWrapping="Wrap" Text="Описание:" VerticalAlignment="Top" Style="{DynamicResource TextBlockImageStyle3}"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="74,0,0,244" TextWrapping="Wrap" Text="Описание:" VerticalAlignment="Bottom" Style="{DynamicResource TextBlockImageStyle3}" Grid.Row="1"/>
 
-                    <TextBox x:Name="DesT" HorizontalAlignment="Center" Margin="0,1016,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="208" Height="50"/>
-                    <Button x:Name="ImT" Click="AddImgTit" Content="Загрузить фото" HorizontalAlignment="Left" Margin="70,1076,0,0" VerticalAlignment="Top" Width="88" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontSize="11"/>
-                    <TextBlock x:Name="PathImT" HorizontalAlignment="Center" Margin="20,1078,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                    <TextBox x:Name="DesT" HorizontalAlignment="Center" Margin="0,1009,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="208" Height="50" Grid.Row="1"/>
+                    <Button x:Name="ImT" Click="AddImgTit" Content="Загрузить фото" HorizontalAlignment="Left" Margin="70,0,0,155" VerticalAlignment="Bottom" Width="88" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontSize="11" Grid.Row="1"/>
+                    <TextBlock x:Name="PathImT" HorizontalAlignment="Left" Margin="188,0,0,126" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Grid.Row="1"/>
 
-                    <TextBlock HorizontalAlignment="Left" Margin="74,1102,0,0" TextWrapping="Wrap" Text="Ссылка на комикс в сети" VerticalAlignment="Top" Style="{DynamicResource TextBlockImageStyle3}"/>
-                    <TextBox x:Name="LinkSite"  HorizontalAlignment="Center" Margin="0,1120,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="208"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="74,0,0,131" TextWrapping="Wrap" Text="Ссылка на комикс в сети" VerticalAlignment="Bottom" Style="{DynamicResource TextBlockImageStyle3}" Grid.Row="1"/>
+                    <TextBox x:Name="LinkSite"  HorizontalAlignment="Center" Margin="0,1121,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="208" Grid.Row="1"/>
 
-                    <Button x:Name="AddTit" Content="Добавить" Style="{StaticResource buttonStyle2}" Click="AddTitle" Background="#FF252525" Margin="74,1151,182,39"/>
-                    <Button x:Name="DropTit" Content="Очистить" Style="{StaticResource buttonStyle2}" Click="DropTitle" Background="#FF252525" Margin="180,1151,0,0" HorizontalAlignment="Left" Width="102" Height="30" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="74,0,0,91" TextWrapping="Wrap" Text="Ссылка на главы комикса" VerticalAlignment="Bottom" Style="{DynamicResource TextBlockImageStyle3}" Grid.Row="1"/>
+                    <TextBox x:Name="LinkChep"  HorizontalAlignment="Center" Margin="0,1161,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="208" Grid.Row="1"/>
+
+
+                    <Button x:Name="AddTit" Content="Добавить" Style="{StaticResource buttonStyle2}" Click="AddTitle" Background="#FF252525" Margin="74,0,182,32" Grid.Row="1" Height="30" VerticalAlignment="Bottom"/>
+                    <Button x:Name="DropTit" Content="Очистить" Style="{StaticResource buttonStyle2}" Click="DropTitle" Background="#FF252525" Margin="180,0,0,32" HorizontalAlignment="Left" Width="102" Height="30" VerticalAlignment="Bottom" Grid.Row="1"/>
 
 
 

@@ -222,6 +222,7 @@ namespace Kursovoi
                 int CodeTrans = db.Translator.Max(t => t.CodeTranslator);
                 int CodeStat = db.Translation.Max(t => t.CodeTranslation);
                 int CodeDes = db.Description.Max(d => d.CodeDescription);
+                int CodeChep = db.Photochepter.Max(c => c.CodePhChepter);
                 string NameTit = NameT.Text;
                 var DateTit = DateT.SelectedDate;
 
@@ -233,6 +234,7 @@ namespace Kursovoi
                 string GenreTit = GenT.Text;
                 string TransTit = TranT.Text;
                 string LinkTit = LinkSite.Text;
+                string LinkChepTit = LinkChep.Text;
                 
                 int prioritystat = SelectedRadioValue<int>(1, Prod, Zam, Zav, Zab);
 
@@ -282,10 +284,17 @@ namespace Kursovoi
                         CodeDescription = CodeDes + 1,
                         Description1 = DescrTit
                     };
+                    Photochepter phchep = new Photochepter
+                    {
+                    CodePhChepter = CodeChep + 1,
+                    CodeTitle = IdTit + 1,
+                    PathPhChepter = LinkChepTit
+                    };
                     db.Title.Add(newtitle);
                     db.Author.Add(newauthor);
                     db.Translator.Add(newtranslator);
                     db.Description.Add(newdescription);
+                    db.Photochepter.Add(phchep);
                     db.SaveChanges();
                 
                
