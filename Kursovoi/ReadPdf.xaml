@@ -6,39 +6,17 @@
         xmlns:syncfusion="clr-namespace:Syncfusion.Windows.PdfViewer;assembly=Syncfusion.PdfViewer.Wpf"
         xmlns:local="clr-namespace:Kursovoi"
         mc:Ignorable="d"
-        Title="ReadPdf"   Background="#FF060606" Width="1364" Height="700">
-    <Grid Height="700"  VerticalAlignment="Center">
+        Title="ReadPdf"   Background="#FF060606" Width="1164" Height="750">
+    <Grid Height="700"  VerticalAlignment="Bottom">
         <Grid.RowDefinitions>
 
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel>
-            <!--<Grid Height="48" Background="#FFBD6CB6" >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"/>
-                    <ColumnDefinition Width="390"/>
-                    <ColumnDefinition Width="130"/>
-                    <ColumnDefinition Width="130"/>
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="PRELIB" FontFamily="Segoe UI" Style="{StaticResource buttonStyle}" FontWeight="Bold" Click="Button_Click" />
-               
-                <Button Grid.Column="2" Style="{StaticResource buttonStyle}" Click="UserPage_Click">
-                  
-                    <Hyperlink x:Name="UsNav" NavigateUri="">
-                        Navigate to Another Page
-                    </Hyperlink>
-                </Button>
-                <Button Grid.Column="3" RenderTransformOrigin="0.547,0.547" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Width="130" Click="Exit_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="&#59540;" Style="{StaticResource buttonIcon}"/>
-                        <TextBlock Text="Выход" Style="{StaticResource TextBlockStyle}" FontWeight="Bold"/>
-                    </StackPanel>
-                </Button>
 
-            </Grid>-->
             <WrapPanel x:Name="HomeGrid">
                 <!--  <syncfusion:PdfViewerControl x:Name="pdfViewer" ItemSource="{Binding DocumentStream}"></syncfusion:PdfViewerControl>-->
-                <WebBrowser x:Name="ReadPdfTitle"  VerticalAlignment="Center" Height="700" Width="1364" ></WebBrowser>
+                <WebBrowser x:Name="ReadPdfTitle"  VerticalAlignment="Center" Height="700" Width="1164" ></WebBrowser>
             </WrapPanel>
 
             <!--<Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="20,20,0,0" 
@@ -46,5 +24,6 @@
                 <Image  Margin="57,21,58,30" x:Name="img"/>-->
 
         </StackPanel>
+        <Button Content="&#xE830;" Click="BackButtom" HorizontalAlignment="Left" Margin="1,-34,0,0" VerticalAlignment="Top" Width="30" Style="{DynamicResource Filtr}" FontFamily="Segoe MDL2 Assets"/>
     </Grid>
 </Page>

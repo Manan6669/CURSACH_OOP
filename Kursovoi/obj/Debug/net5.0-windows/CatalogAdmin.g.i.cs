@@ -453,7 +453,7 @@ namespace Kursovoi {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Kursovoi;V1.0.0.0;component/catalogadmin.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Kursovoi;component/catalogadmin.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\CatalogAdmin.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

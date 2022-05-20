@@ -77,10 +77,10 @@ namespace Kursovoi
 
         }
 
-        
-
-        
-
-        
+        private void BackButtom(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("ShabTitle.xaml", UriKind.Relative));
+            //Application.Current.Resources["TT"] = shortcode;
+        }
     }
 }

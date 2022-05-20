@@ -216,6 +216,10 @@ namespace Kursovoi
         {
             using (CURSOVOIContext db = new CURSOVOIContext())
             {
+                using (var transaction = db.Database.BeginTransaction())
+                {
+                try {
+                
                 int IdTit = db.Title.Max(m => m.CodeTitle);
                 int CodeType = db.TypeOfComics.Max(c => c.CodeTypeOfComics);
                 int CodeAuth = db.Author.Max(a => a.CodeAuthor);
@@ -296,8 +300,15 @@ namespace Kursovoi
                     db.Description.Add(newdescription);
                     db.Photochepter.Add(phchep);
                     db.SaveChanges();
-                
-               
+                    transaction.Commit();
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Не удалось добавить тайтл!");
+                        transaction.Rollback();
+                    }
+               }
             }
 
 

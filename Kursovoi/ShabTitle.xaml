@@ -31,7 +31,7 @@
 
             <TextBlock x:Name="NameTitle" Text="test"  Grid.Column="1" HorizontalAlignment="Left" Margin="50,53,0,0" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="544"  Style="{StaticResource TextBlockStyle}"/>
             <Rectangle Height="46"  Fill="#FF252525" VerticalAlignment="Top" Grid.Column="2" Margin="34,116,34,0"/>
-            <StackPanel Orientation="Horizontal" Grid.Column="2" Height="47" Margin="40,116,79,0" VerticalAlignment="Top" >
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Height="47" Margin="40,116,34,0" VerticalAlignment="Top" >
                 <TextBlock Text="Тип:" Margin="10 0 0 0" Grid.Column="2"  TextWrapping="Wrap" VerticalAlignment="Center"  Style="{StaticResource TextBlockImageStyle2}"/>
                 <TextBlock Margin="2 0 0 0" VerticalAlignment="Center" Text="test" TextWrapping="Wrap" x:Name="type"  Style="{StaticResource TextBlockImageStyle2}"></TextBlock>
                 <TextBlock Text="Год:" Margin="10 0 0 0" Grid.Column="2"  TextWrapping="Wrap" VerticalAlignment="Center" Style="{StaticResource TextBlockImageStyle2}"/>
@@ -39,7 +39,7 @@
                 <TextBlock Text="Автор:" Margin="10 0 0 0" Grid.Column="2"  TextWrapping="Wrap" VerticalAlignment="Center" Style="{StaticResource TextBlockImageStyle2}"/>
                 <TextBlock Margin="2 0 0 0" VerticalAlignment="Center" Text="test" TextWrapping="Wrap" x:Name="auth"   Style="{StaticResource TextBlockImageStyle2}"></TextBlock>
                 <TextBlock Text="Издательство:"  Margin="10 0 0 0" Grid.Column="2"  TextWrapping="Wrap" VerticalAlignment="Center"  Style="{StaticResource TextBlockImageStyle2}"/>
-                <TextBlock Margin="2 0 0 0" VerticalAlignment="Center" Text="test" TextWrapping="Wrap" x:Name="publ"  Style="{StaticResource TextBlockImageStyle2}" Width="132"></TextBlock>
+                <TextBlock Margin="2 0 0 0" VerticalAlignment="Center" Text="test" TextWrapping="Wrap" x:Name="publ"  Style="{StaticResource TextBlockImageStyle2}" Width="190"></TextBlock>
             </StackPanel>
 
             <Rectangle Grid.Column="2" HorizontalAlignment="Center" Height="469" Margin="0,184,0,0" Fill="#FF252525" VerticalAlignment="Top" Width="572"/>

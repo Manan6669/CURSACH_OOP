@@ -6,9 +6,9 @@
         
         xmlns:local="clr-namespace:Kursovoi"
         mc:Ignorable="d"
-        Title="WindowMainAdmin" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" WindowState="Maximized" Background="#FF060606" Width="1364" Height="700" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
+        Title="WindowMainAdmin" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" WindowState="Maximized" Background="#FF060606" Width="1164" Height="700" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
 
-    <Grid Width="1364" Margin="0,0,0,0">
+    <Grid Width="1164" Margin="0,0,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
@@ -17,7 +17,7 @@
             <Grid Height="51" Background="#FFBD6CB6">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150"/>
-                    <ColumnDefinition Width="950"/>
+                    <ColumnDefinition Width="740"/>
                     <ColumnDefinition Width="130"/>
                     <ColumnDefinition Width="130"/>
                 </Grid.ColumnDefinitions>
