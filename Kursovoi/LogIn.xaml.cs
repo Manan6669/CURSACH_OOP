@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace Kursovoi
 {
     /// <summary>
@@ -23,6 +24,7 @@ namespace Kursovoi
         public LogIn()
         {
              InitializeComponent();
+            //User.ValidateControl()
         }
         //private bool authcode;
         private void ButtonOpen_Click(object sender, RoutedEventArgs e)
@@ -74,7 +76,10 @@ namespace Kursovoi
              }   
 
         }
-      
+        private void TextBox_Error(object sender, ValidationErrorEventArgs e)
+        {
+            MessageBox.Show(e.Error.ErrorContent.ToString());
+        }
         private void EnterToProgrammWithRegistr(object sender, RoutedEventArgs e)
         {
             using (CURSOVOIContext db = new CURSOVOIContext())

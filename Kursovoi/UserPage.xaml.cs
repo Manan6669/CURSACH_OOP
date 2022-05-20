@@ -87,24 +87,27 @@ namespace Kursovoi
             }
         }
 
-        public void DeleteBookmark(object sender, MouseEventArgs e)
+        public void DeleteBookmark(object sender, MouseButtonEventArgs e)
         {
             var buttonNameBookmarkDel = (sender as Button).Name;
             string shortcodeBook = buttonNameBookmarkDel.ToString();
             shortcodeBook = shortcodeBook.Remove(0, 5);
 
-            using (CURSOVOIContext db = new CURSOVOIContext())
+            //if (e.Button == MouseButtons.Right)
             {
-                try
+                using (CURSOVOIContext db = new CURSOVOIContext())
                 {
-                    var sourcbook = db.Bookmarks.FirstOrDefault(s => s.CodeTitle == int.Parse(shortcodeBook));
-                    var sb = sourcbook.CodeTitle;
-                    db.Bookmarks.Remove(sourcbook);
-                    db.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Слишком много нажатий на кнопку!");
+                    try
+                    {
+                        var sourcbook = db.Bookmarks.FirstOrDefault(s => s.CodeTitle == int.Parse(shortcodeBook));
+                        var sb = sourcbook.CodeTitle;
+                        db.Bookmarks.Remove(sourcbook);
+                        db.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Слишком много нажатий на кнопку!");
+                    }
                 }
             }
         }
@@ -121,6 +124,9 @@ namespace Kursovoi
 
         private string _filepathUser;
         string filedb;
+
+        public object MouseButtons { get; private set; }
+
         private void AddPhotoUser_Click(object sender, RoutedEventArgs e)
         {
             var LoqUs = Application.Current.Resources["EntUser"];
