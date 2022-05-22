@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovoi"
         mc:Ignorable="d"
-      Title="ShabTitle" d:DesignHeight="680" d:DesignWidth="1000">
+      Title="Prelib" d:DesignHeight="680" d:DesignWidth="1000">
 
     <ScrollViewer VerticalScrollBarVisibility="Hidden">
         <Grid Width="1000" Height="680">
@@ -57,6 +57,7 @@
                     <TextBlock Text="&#xE72B;" Style="{StaticResource buttonIcon}"/>
                 </StackPanel>
             </Button>
+            <Button x:Name="DelBut" Content="Удалить" HorizontalAlignment="Center" Margin="0,624,0,0" VerticalAlignment="Top" Style="{DynamicResource Filtr}" Click="DelFromBd_Click"/>
         </Grid>
     </ScrollViewer>
 

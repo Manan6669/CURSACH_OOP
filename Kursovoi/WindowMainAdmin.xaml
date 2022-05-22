@@ -6,7 +6,7 @@
         
         xmlns:local="clr-namespace:Kursovoi"
         mc:Ignorable="d"
-        Title="WindowMainAdmin" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" WindowState="Maximized" Background="#FF060606" Width="1164" Height="700" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
+        Title="Prelib" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" WindowState="Maximized" Background="#FF060606" Width="1164" Height="700" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
 
     <Grid Width="1164" Margin="0,0,0,0">
         <Grid.RowDefinitions>

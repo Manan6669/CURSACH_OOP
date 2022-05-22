@@ -33,47 +33,63 @@ namespace Kursovoi
             string password = Password.Password.Trim();
 
             Users authus = null;
-           
-            using (CURSOVOIContext db = new CURSOVOIContext())
+            if (loqin != "" && password != "")
             {
-                authus = db.Users.Where(b=>b.UsersLoqin == loqin && b.UsersPassword == password).FirstOrDefault();
-                 Application.Current.Resources["AdminEntUser"] = loqin;
+                 using (CURSOVOIContext db = new CURSOVOIContext())
+                 {
+                    authus = db.Users.Where(b => b.UsersLoqin == loqin && b.UsersPassword == password).FirstOrDefault();
+                    Application.Current.Resources["AdminEntUser"] = loqin;
                     Application.Current.Resources["AdminPassw"] = password;
 
-                if (authus != null && authus.UsersLoqin == "Admin" && authus.UsersPassword == "admin")
-            {
-                   
+                    if (authus != null)
+                    {
 
-                WindowMainAdmin winm = new WindowMainAdmin();
-                winm.Show();
-                var window = Application.Current.Windows[0];
-                if (window != null)
-                window.Close();
-            }
-            else
-            {
-                   
-                var authcode = authus.UnicCodeUsers;
-                Application.Current.Resources["EntUser"] = loqin;
-                Application.Current.Resources["EntPassw"] = password;
-                Application.Current.Resources["CodeUser"] = authcode;
-                WindowMain winm = new WindowMain();
-                winm.Show();
-                var window = Application.Current.Windows[0];
-                if (window != null)
-                    window.Close();
-            }
-            if(authus.UsersLoqin != loqin || authus.UsersPassword != password)
-            {
-                MessageBox.Show("Неверный логин или пароль!", $"Ошибка");
-                LogIn log = new LogIn();
-                log.Show();
-                var window = Application.Current.Windows[0];
-                if (window != null)
-                window.Close();
+                        if (authus.UsersLoqin == "Admin" && authus.UsersPassword == "admin")
+                        {
+                            Application.Current.Resources["EntAdmin"] = loqin;
+                            Application.Current.Resources["EntPasswAdmin"] = password;
+                            WindowMainAdmin winm = new WindowMainAdmin();
+                            winm.Show();
+                            var window = Application.Current.Windows[0];
+                            if (window != null)
+                                window.Close();
+                        }
+                        else
+                        {
 
+                            var authcode = authus.UnicCodeUsers;
+                            Application.Current.Resources["EntUser"] = loqin;
+                            Application.Current.Resources["EntPassw"] = password;
+                            Application.Current.Resources["CodeUser"] = authcode;
+                            WindowMain winm = new WindowMain();
+                            winm.Show();
+                            var window = Application.Current.Windows[0];
+                            if (window != null)
+                                window.Close();
+
+                        }
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Неверный логин или пароль!", $"Ошибка");
+                        
+
+                    }
+                    
+                 
                 }
-             }   
+               
+            } else
+                {
+                    MessageBox.Show("Вы не ввели логин или пароль!");
+                   /* LogIn log = new LogIn();
+                    log.Show();
+                    var window = Application.Current.Windows[0];
+                    if (window != null)
+                        window.Close();*/
+                }
+           
 
         }
         private void TextBox_Error(object sender, ValidationErrorEventArgs e)
@@ -102,20 +118,20 @@ namespace Kursovoi
                          };
                         db.Users.Add(newus);
                         db.SaveChanges();
-                        Users user = db.Users.FirstOrDefault((u) => u.UsersLoqin == loqin);
-                        WindowMain winm = new WindowMain();
+                      Users user = db.Users.FirstOrDefault((u) => u.UsersLoqin == loqin);
+                       /*   WindowMain winm = new WindowMain();
                         winm.Show();
                         var window = Application.Current.Windows[0];
                         if (window != null)
-                            window.Close();
-                        /* MessageBox.Show("Войдите, пожалуйста, снова!", $"Добро пожаловать, {user.UsersLoqin}!");
+                            window.Close();*/
+                         MessageBox.Show("Войдите, пожалуйста, снова!", $"Добро пожаловать, {user.UsersLoqin}!");
                          LogIn log = new LogIn();
                          log.Show();
                          var window = Application.Current.Windows[0];
                          if (window != null)
-                              window.Close();*/
+                              window.Close();
                     }
-                     catch
+                    catch
                     {
                     MessageBox.Show("Ошибка!", $"Неверный логин или пароль!");
                     }

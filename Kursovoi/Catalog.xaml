@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Kursovoi"
       mc:Ignorable="d" 
       
-      Title="Catalog" d:DesignHeight="700">
+      Title="Prelib" d:DesignHeight="700">
     <ScrollViewer VerticalScrollBarVisibility="Hidden">
         <Grid Width="1115" Height="700">
             <Grid.ColumnDefinitions>

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Kursovoi"
       mc:Ignorable="d" 
       
-      Title="CatalogAdmin" d:DesignHeight="1290">
+      Title="Prelib" d:DesignHeight="1290">
     <ScrollViewer VerticalScrollBarVisibility="Hidden">
         <Grid Width="1115" Height="1290">
             <Grid.RowDefinitions>
@@ -27,7 +27,7 @@
                     </Button>
                 </StackPanel>
                 <ScrollViewer VerticalScrollBarVisibility="Hidden" Height="1160" VerticalAlignment="Top" Margin="0,60,0,0">
-                    <WrapPanel Width ="720" x:Name="TitleCatalog" HorizontalAlignment="Center" Margin="45,10,57,0" />
+                    <WrapPanel Width ="720" x:Name="TitleCatalog"  Margin="0,0,57,0" />
                 </ScrollViewer>
                 <Grid Grid.Column="2" Height="1290" VerticalAlignment="Top">
                     <Grid.RowDefinitions>

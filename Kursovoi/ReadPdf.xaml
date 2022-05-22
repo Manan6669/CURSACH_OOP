@@ -6,7 +6,7 @@
         xmlns:syncfusion="clr-namespace:Syncfusion.Windows.PdfViewer;assembly=Syncfusion.PdfViewer.Wpf"
         xmlns:local="clr-namespace:Kursovoi"
         mc:Ignorable="d"
-        Title="ReadPdf"   Background="#FF060606" Width="1164" Height="750">
+        Title="Prelib"   Background="#FF060606" Width="1164" Height="750">
     <Grid Height="700"  VerticalAlignment="Bottom">
         <Grid.RowDefinitions>
 

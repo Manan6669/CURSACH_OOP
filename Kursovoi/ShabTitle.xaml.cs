@@ -70,17 +70,31 @@ namespace Kursovoi
                 ImgTit.Source = new BitmapImage(new Uri(path));
 
                 var t = sourc.Link;
-                // btnlink.Content = t;
-                Application.Current.Resources["lk"] = t;
-                /* Binding bindlink = new Binding();
-                 bindlink.Source = sourc.Link;
-                var t = UriTit.SetBinding(Hyperlink.NavigateUriProperty, bindlink);
 
-                  UriTit.RequestNavigate += LinkOnRequestNavigate;
-                 */
+                Application.Current.Resources["lk"] = t;
+
+
+                var LoqUsAd = Application.Current.Resources["AdminEntUser"];
+                var PasUsAd = Application.Current.Resources["AdminPassw"];
+
+                // var CodUs = Application.Current.Resources["CodeUser"];
+                // var authusers = db.Users.Where(b => b.UsersLoqin == LoqUs.ToString() && b.UsersPassword == PasUs.ToString()).FirstOrDefault();
+                if (LoqUsAd.ToString() != "Admin" && PasUsAd.ToString() != "admin")
+                {
+                    DelBut.Visibility = Visibility.Hidden;
+                }
+                else
+                {
+                    DelBut.Visibility = Visibility.Visible;
+                }
+            
 
             };
         }
+      /*  private void Visab(object sender, RoutedEventArgs e)
+        {
+           
+        }*/
         private void Back_Click(object sender, RoutedEventArgs e)
         {
 
@@ -102,7 +116,7 @@ namespace Kursovoi
                 }
             }
         }
-        
+
         private void LinkClick(object sender, EventArgs e)
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
@@ -110,10 +124,10 @@ namespace Kursovoi
                 var t = Application.Current.Resources["lk"];
                 Process.Start(new ProcessStartInfo("cmd", $"/c start {(string)t}") { CreateNoWindow = true });
             }
-            
+
         }
 
-        
+
         private void AddToBookM_Click(object sender, RoutedEventArgs e)
         {
             using (CURSOVOIContext db = new CURSOVOIContext())
@@ -130,9 +144,9 @@ namespace Kursovoi
                 var sas = db.Bookmarks.Where(p => p.UnicCodeUsers == int.Parse(codd)).ToList();
                 if (sas != null)
                 {
-                    foreach(var item in sas)
+                    foreach (var item in sas)
                     {
-                        if(item.CodeTitle == int.Parse(shortcode))
+                        if (item.CodeTitle == int.Parse(shortcode))
                         {
                             k++;
                         }
@@ -164,55 +178,55 @@ namespace Kursovoi
 
 
 
-/*
-                var sourc = db.Title.Select(p => p.CodeTitle == int.Parse(shortcode));
-                var authus = db.Users.Where(b => b.UsersLoqin == LoqUs.ToString() && b.UsersPassword == PasUs.ToString()).FirstOrDefault();
-                var aucode = authus.UnicCodeUsers;
-                //  var sbk = db.Bookmarks.Select(s=>s.CodeTitle);
-                var sbk = db.Bookmarks.FirstOrDefault(s=>s.CodeTitle == int.Parse(shortcode));
-                var cldf = db.Bookmarks.Where(p => EF.Functions.Like(p.CodeTitle.ToString(), $"%{shortcode}%")).ToList();
-                var c = cldf.Count;
-                // var b = sbk.CodeTitle;
-                //int b = sbk.Count();
-                // int sc = sourc.CodeTitle;
-                var sourcBook = db.Bookmarks.Where(b => b.UnicCodeUsers == aucode).ToList();
-                   if ( sourcBook != null)
-                   {
-                    foreach (Bookmarks b in sourcBook)
-                    {
-                        string NameTitUs = NameTitle.Text.Trim();
+                /*
+                                var sourc = db.Title.Select(p => p.CodeTitle == int.Parse(shortcode));
+                                var authus = db.Users.Where(b => b.UsersLoqin == LoqUs.ToString() && b.UsersPassword == PasUs.ToString()).FirstOrDefault();
+                                var aucode = authus.UnicCodeUsers;
+                                //  var sbk = db.Bookmarks.Select(s=>s.CodeTitle);
+                                var sbk = db.Bookmarks.FirstOrDefault(s=>s.CodeTitle == int.Parse(shortcode));
+                                var cldf = db.Bookmarks.Where(p => EF.Functions.Like(p.CodeTitle.ToString(), $"%{shortcode}%")).ToList();
+                                var c = cldf.Count;
+                                // var b = sbk.CodeTitle;
+                                //int b = sbk.Count();
+                                // int sc = sourc.CodeTitle;
+                                var sourcBook = db.Bookmarks.Where(b => b.UnicCodeUsers == aucode).ToList();
+                                   if ( sourcBook != null)
+                                   {
+                                    foreach (Bookmarks b in sourcBook)
+                                    {
+                                        string NameTitUs = NameTitle.Text.Trim();
 
-                        try
-                        {
-                            Bookmarks book = new Bookmarks
-                            {
-                                CodeBookmarks = CodeBook + 1,
-                                UnicCodeUsers = (int)CodUs,
-                                CodeTitle = int.Parse(shortcode),
+                                        try
+                                        {
+                                            Bookmarks book = new Bookmarks
+                                            {
+                                                CodeBookmarks = CodeBook + 1,
+                                                UnicCodeUsers = (int)CodUs,
+                                                CodeTitle = int.Parse(shortcode),
 
-                            };
-                            db.Bookmarks.Add(book);
-                            db.SaveChanges();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error");
-                        }
-                    }
-                   }
-                   else
-                   {
-                       MessageBox.Show("Такой комикс уже есть в закладках!");
-                   }
-                 
-           /*     if (sourcBook != null)
-                {
-                    foreach (var s in sourcBook)
-                    {
+                                            };
+                                            db.Bookmarks.Add(book);
+                                            db.SaveChanges();
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            MessageBox.Show("Error");
+                                        }
+                                    }
+                                   }
+                                   else
+                                   {
+                                       MessageBox.Show("Такой комикс уже есть в закладках!");
+                                   }
 
-                    }
-                }
-           */
+                           /*     if (sourcBook != null)
+                                {
+                                    foreach (var s in sourcBook)
+                                    {
+
+                                    }
+                                }
+                           */
             }
         }
 
@@ -234,6 +248,24 @@ namespace Kursovoi
                 {
                     this.NavigationService.Navigate(new Uri("ReadPdf.xaml", UriKind.Relative));
                 }
+            }
+        }
+
+        private void DelFromBd_Click(object sender, RoutedEventArgs e)
+        {
+           
+            var code = Application.Current.Resources["TT"];
+            string shortcode = code.ToString();
+            shortcode = shortcode.Remove(0, 5);
+            using (CURSOVOIContext db = new CURSOVOIContext())
+            {
+                var delTit = db.Title.FirstOrDefault(s => s.CodeTitle == int.Parse(shortcode));
+                var desc = delTit.CodeDescription;
+                var descTit = db.Description.FirstOrDefault(d => d.CodeDescription == desc);
+              //  db.Description.Remove(descTit);
+                db.Title.Remove(delTit);
+                db.SaveChanges();
+
             }
         }
     }
